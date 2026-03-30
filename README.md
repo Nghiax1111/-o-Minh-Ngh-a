@@ -7,7 +7,7 @@
 
 ## 📌 Giới thiệu
 
-Repository này chứa phân tích kỹ thuật chi tiết về **WormGPT** – một malware đa chức năng viết bằng C++ cho Windows, với các module: Telegram C2, ransomware, keylogger, password grabber, và persistence.
+Repository này chứa phân tích kỹ thuật chi tiết về **MN** – một malware đa chức năng viết bằng C++ cho Windows, với các module: Telegram C2, ransomware, keylogger, password grabber, và persistence.
 
 Mục tiêu: **hiểu cách malware hoạt động để xây dựng phòng thủ hiệu quả** (Purple Team).
 
