@@ -1,0 +1,26 @@
+
+---
+
+```yara
+rule WormGPT_Telegram {
+    strings:
+        $a = "api.telegram.org/bot"
+        $b = "BOT_TOKEN"
+        $c = "CHAT_ID"
+    condition: any of them
+}
+
+rule WormGPT_Persistence {
+    strings:
+        $a = "WindowsUpdate"
+        $b = "MicrosoftEdgeUpdateTask"
+    condition: any of them
+}
+
+rule WormGPT_Ransomware {
+    strings:
+        $a = "vssadmin delete shadows"
+        $b = "DisableAntiSpyware"
+        $c = "RANSOM_KEY"
+    condition: any of them
+}
