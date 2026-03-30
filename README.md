@@ -38,22 +38,3 @@ rule MN_Strings {
     condition:
         any of them
 }
-# Phân tích  MN Malware
-
-## 1. Anti-Debug
-- `IsDebuggerPresent()`: API chuẩn
-- PEB BeingDebugged: đọc trực tiếp từ Process Environment Block
-- Timing attack: `__rdtsc()` phát hiện debugger
-
-## 2. Anti-VM
-- MAC address: VMware (000C29, 005056)
-- CPU cores < 2
-- RAM < 2GB
-
-## 3. Evasion
-```cpp
-// AMSI patch: AmsiScanBuffer → trả về 0x80070057
-BYTE patch_amsi[] = { 0xB8, 0x57, 0x00, 0x07, 0x80, 0xC3 };
-
-// ETW patch: EtwEventWrite → trả về 0
-BYTE patch_etw[] = { 0xB8, 0x00, 0x00, 0x00, 0x00, 0xC3 };
